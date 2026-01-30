@@ -55,7 +55,7 @@ int main() {
 
 
     if (calcscore(group) % 47 == calcscore(comet) % 47) {
-        cout << "GO" << endl;        
+        cout << "GO" << endl;
     }
     else {
         cout << "STAY" << endl;
