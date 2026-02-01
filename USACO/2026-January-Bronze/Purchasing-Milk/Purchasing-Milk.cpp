@@ -15,7 +15,6 @@
 
 using namespace std;
 
-#define ll long long;
 
 void setIO(string name = "") {
     ios_base::sync_with_stdio(0);
@@ -28,15 +27,15 @@ void setIO(string name = "") {
 
 int main() {
     setIO("milk");
-    ll N;
-    ll Q;
-    ll a;
-    ll x;
-    ll price;
+    int N;
+    int Q;
+    int a;
+    int x;
+    int price;
 
     cin >> N >> Q;
 
-    ll prices[N];
+    int prices[N];
 
     for (int i = 0; i < N; i++) {
         cin >> a;
@@ -46,13 +45,13 @@ int main() {
     for (int i = 0; i < Q; i++) {
         cin >> x;
         price = 0;
-        for (ll j = ll(log2(x)); j > 0; j--) {
+        for (int j = int(log2(x)); j > 0; j--) {
             while (x - pow(2, j) >= 0) {
                 x -= (pow(2, j));
                 price += prices[j];
             }
         }
-        if (ll(log2(x) == 0)) {
+        if (int(log2(x) == 0)) {
             price += prices[0];
         }
         cout << price << endl;
