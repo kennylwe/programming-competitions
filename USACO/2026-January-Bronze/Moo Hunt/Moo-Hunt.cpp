@@ -13,10 +13,7 @@
 #include <tuple>
 #include <vector>
 
-
 using namespace std;
-
-#define ll as longlong
 
 void setIO(string name = "") {
     ios_base::sync_with_stdio(0);
@@ -27,34 +24,33 @@ void setIO(string name = "") {
     }
 }
 
-int printgrid(int grid[][500], int N) {
-    for (int i = 0; i < N; i++) {
-        for (int j = 0; j < N; j++) {
-            cerr << grid[i][j] << " ";
-        }
-        cerr << endl;
-    }
-    return 1;
-}
 
 int main() {
-    setIO("photo");
-    int N, K, Q;
-    int r, c, v;
-    cin >> N >> K >> Q;
-    int grid[500][500];
-    for (int i = 0; i < Q; i++) {
-        cin >> r >> c >> v;
-        r--, c--;
-        grid[r][c] = v;
+    setIO("Hunt");
+    int N;
+    int K;
+    cin >> N >> K;
+
+    int x, y, z;
+    int board[N];
+
+    int xs[N];
+    int ys[N];
+    int zs[N];
+
+    for (int i = 0; i < K; i++) {
+        cin >> x >> y >> z;
         
+        xs[x-1] += 1;
+        ys[y-1] += 1;
+        zs[z-1] += 1;
+
+
+
     }
-    printgrid(grid, N);
+    for (int i = 0; i < N; i++) {
+        
 
-
-
-
-
+    }
+    
 }
-
-
