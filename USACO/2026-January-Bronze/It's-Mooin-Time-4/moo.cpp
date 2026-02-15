@@ -28,7 +28,6 @@ bool isPossible(string S) {
     if (S[0] == 'O' && S[1] == 'M') {
         return false;
     }
-
     return true;
 }
 
@@ -43,7 +42,7 @@ int numofchanges(string S) {
 }
 
 int main() {
-    setIO("Moo");
+    setIO();
     int T;
     int k;
 
@@ -72,24 +71,33 @@ int main() {
     for (int i = 0; i < T; i++) {
 
 
-        cout << "YES" << endl;
-        //I give up T_T
-
         cin >> N >> S;
-        count = 0;
+        int flipcounter = 0;
+        solution = "";
         if (k == 0) {
-            if (isPossible(S)) {cout << "YES" << endl;}
-            else {cout << "NO" << endl;}
+            cout << "YES" << endl;
         }
         else {
+            for (int j = N - 1; j >= 0; j--) {
+                if (S[j] == 'O' && flipcounter % 2 == 0) {
+                    solution += 'O';
+                    flipcounter++;
+                }
+                else if (S[j] == 'M' && flipcounter % 2 == 0) {
+                    solution += 'M';
+                }
+                else if (S[j] == 'O' && flipcounter % 2 == 1) {
+                    solution += 'M';
+                }
+                else if (S[j] == 'M' && flipcounter % 2 == 1) {
+                    solution += 'O';
+                    flipcounter++;
+                }
+            }
+            reverse(solution.begin(), solution.end());
+            cout << "YES" << endl;
+            cout << solution << endl;
 
-            if (S[S.length() - 1] == 'O') {
-                solution = solution + "M";
-            }
-            else {
-                solution = solution + "M";
-            }
-            
         }
 
 
