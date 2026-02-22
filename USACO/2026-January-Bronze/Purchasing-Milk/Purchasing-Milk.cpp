@@ -14,6 +14,7 @@
 #include <vector>
 
 using namespace std;
+#define ll long long
 
 
 void setIO(string name = "") {
@@ -25,27 +26,28 @@ void setIO(string name = "") {
     }
 }
 
+
 int main() {
     setIO("milk");
-    int N;
-    int Q;
-    int a;
-    int x;
-    int price;
+    ll N;
+    ll Q;
+    ll a;
+    ll x;
+    ll price;
 
     cin >> N >> Q;
 
-    int prices[N];
+    ll prices[N];
 
-    for (int i = 0; i < N; i++) {
+    for (ll i = 0; i < N; i++) {
         cin >> a;
         prices[i] = a;
     }
 
-    for (int i = 0; i < Q; i++) {
+    for (ll i = 0; i < Q; i++) {
         cin >> x;
         price = 0;
-        for (int j = int(log2(x)); j > 0; j--) {
+        for (ll j = int (log2(x)); j > 0; j--) {
             while (x - pow(2, j) >= 0) {
                 x -= (pow(2, j));
                 price += prices[j];
